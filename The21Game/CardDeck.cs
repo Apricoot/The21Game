@@ -11,12 +11,42 @@ namespace The21Game
         
         public List<Card> cardList = new List<Card>();
         Card card = new Card();
+        Random r = new Random();
 
         public List<Card> ReturnCardDeck()
         {
-            for(int i = 0; i < 31; i++)
+            for (int i = 0; i < 31; i++)
             {
                 cardList.Add(new Card());
+            }
+
+            //foreach(Card c in cardList)
+            //{
+
+            //    if (cardList.Contains<Card>(c))
+            //    {
+            //        c.GiveCard();
+
+            //    }
+            //    else
+            //    {
+            //        break;
+            //    }
+            //}
+
+            //while (cardList.Count != 31)
+            //{
+            //    Card c = card.GiveCard(r.Next(0, 8), r.Next(0, 3));
+            //}
+            
+            //попытка реализовать колоду. думаю не очень удачная нужно передумать алгоритм
+           foreach(Card c in cardList)
+            {
+                c.GiveCard();
+                if (cardList.Contains(c))
+                {
+                    c.GiveCard();
+                }
             }
             return cardList;
         }

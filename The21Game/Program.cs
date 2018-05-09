@@ -17,29 +17,33 @@ namespace The21Game
             Card myCard = new Card();
             CardDeck myCardDeck = new CardDeck();
 
-            while (true)
+            //while (true)
+            //{
+            //    //myCard.GiveCard();
+            //    //Console.WriteLine(myCard.ToString());
+            //    //Thread.Sleep(1000);
+
+            //    //while (myCardDeck.CardDeckFull())
+            //    //{
+            //    //    myCardDeck.GiveCardFromDeck();
+            //    //    //myCardDeck.cardList.ToString();
+            //    //}
+
+                
+
+                
+                
+            //    //Thread.Sleep(1000);
+
+
+
+            //}
+            myCardDeck.ReturnCardDeck();
+
+            foreach (Card c in myCardDeck.cardList)
             {
-                //myCard.GiveCard();
-                //Console.WriteLine(myCard.ToString());
+                Console.WriteLine(c.ToString());
                 //Thread.Sleep(1000);
-                while (myCardDeck.CardDeckFull())
-                {
-                    myCardDeck.GiveCardFromDeck();
-                    //myCardDeck.cardList.ToString();
-                }
-
-                foreach(Card c in myCardDeck.cardList)
-                {
-                    Console.WriteLine(c.ToString());
-                    //Thread.Sleep(1000);
-                }
-
-                
-                
-                //Thread.Sleep(1000);
-
-
-
             }
         }
     }

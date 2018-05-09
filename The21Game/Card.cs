@@ -49,6 +49,11 @@ namespace The21Game
 
         public Card() { }
 
+        public Card(int ctype, int csuit)
+        {
+
+        }
+
         public Card(CardType ct, CardSuit cs)
         {
             cardType = ct;
@@ -58,7 +63,8 @@ namespace The21Game
 
         public Card GiveCard()
         {
-           int randomCardType = random.Next(0, 8);
+            Random random = new Random();
+            int randomCardType = random.Next(0, 8);
            int randomCardSuit = random.Next(0, 3);
 
             switch (randomCardType)
@@ -92,7 +98,67 @@ namespace The21Game
                     break;
             }
 
+
             switch (randomCardSuit)
+            {
+                case 0:
+                    cardSuit = CardSuit.Diamonds;
+                    break;
+                case 1:
+                    cardSuit = CardSuit.Clubs;
+                    break;
+                case 2:
+                    cardSuit = CardSuit.Hearts;
+                    break;
+                case 3:
+                    cardSuit = CardSuit.Spades;
+                    break;
+            }
+
+            Card newCard = new Card(cardType, cardSuit);
+
+            return newCard;
+        }
+
+        public Card GiveCard(int crtType, int crtSuit)
+        {
+            //Random random = new Random();
+            //int randomCardType = random.Next(0, 8);
+            //int randomCardSuit = random.Next(0, 3);
+
+            switch (crtType)
+            {
+                case 0:
+                    cardType = CardType.six;
+                    break;
+                case 1:
+                    cardType = CardType.seven;
+                    break;
+                case 2:
+                    cardType = CardType.eight;
+                    break;
+                case 3:
+                    cardType = CardType.nine;
+                    break;
+                case 4:
+                    cardType = CardType.ten;
+                    break;
+                case 5:
+                    cardType = CardType.Jack;
+                    break;
+                case 6:
+                    cardType = CardType.Lady;
+                    break;
+                case 7:
+                    cardType = CardType.King;
+                    break;
+                case 8:
+                    cardType = CardType.Ace;
+                    break;
+            }
+
+
+            switch (crtSuit)
             {
                 case 0:
                     cardSuit = CardSuit.Diamonds;
