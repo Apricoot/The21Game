@@ -16,34 +16,33 @@ namespace The21Game
             
             Card myCard = new Card();
             CardDeck myCardDeck = new CardDeck();
+            List<Card> PlayerCard = new List<Card>();
+            List<Card> CompCard = new List<Card>();
 
-            //while (true)
-            //{
-            //    //myCard.GiveCard();
-            //    //Console.WriteLine(myCard.ToString());
-            //    //Thread.Sleep(1000);
-
-            //    //while (myCardDeck.CardDeckFull())
-            //    //{
-            //    //    myCardDeck.GiveCardFromDeck();
-            //    //    //myCardDeck.cardList.ToString();
-            //    //}
-
-                
-
-                
-                
-            //    //Thread.Sleep(1000);
-
-
-
-            //}
+                      
             myCardDeck.CreateCardDeck();
+            myCardDeck.Shuffle();
+            Console.WriteLine("choose who pulls the card first!Print - Me or AI");
+            A:
+            string otvet = Console.ReadLine();
+            if(otvet == "Me")
+            {
+
+            }
+            else if(otvet == "AI")
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("you wrote an unsupported option. write \"Me\" or \"AI\" without brackets");
+                goto A;
+            }
 
             foreach (Card c in myCardDeck.cardList)
             {
                 Console.WriteLine(c.ToString());
-                //Thread.Sleep(1000);
+                
             }
         }
     }

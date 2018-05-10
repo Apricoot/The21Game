@@ -12,15 +12,15 @@ namespace The21Game
     /// </summary>
     public enum CardType
     {
-        six = 6,
-        seven = 7,
-        eight = 8,
-        nine = 9,
-        ten = 10,
-        Jack = 2,
-        Lady = 3,
-        King = 4,
-        Ace = 11
+        six,// = 6,
+        seven,// = 7,
+        eight,// = 8,
+        nine,// = 9,
+        ten,// = 10,
+        Jack,// = 2,
+        Lady,// = 3,
+        King,// = 4,
+        Ace,// = 11
     };
 
     /// <summary>
@@ -129,9 +129,7 @@ namespace The21Game
 
         public Card GiveCard(int crtType, int crtSuit)
         {
-            //Random random = new Random();
-            //int randomCardType = random.Next(0, 8);
-            //int randomCardSuit = random.Next(0, 3);
+           
 
             switch (crtType)
             {

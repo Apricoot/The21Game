@@ -10,81 +10,45 @@ namespace The21Game
     {
         
         public List<Card> cardList = new List<Card>();
+        private Random random = new Random();
         Card card = new Card();
         Random r = new Random();
 
+        /// <summary>
+        /// Создает колоду 
+        /// </summary>
+        /// <returns></returns>
         public List<Card> CreateCardDeck()
         {
-            for(int suit = 0; suit <= 3; suit++)
+            for (int suit = 0; suit <= 3; suit++)
             {
-                for(int value = 0; value <= 8; value++)
+                for (int value = 0; value <= 8; value++)
                 {
-                    cardList.Add(new Card((CardType)value,(CardSuit)suit));
+                    cardList.Add(new Card((CardType)value, (CardSuit)suit));
                 }
             }
-
-            //for (int i = 0; i < 31; i++)
-            //{
-            //    cardList.Add(new Card());
-            //}
-
-            //foreach(Card c in cardList)
-            //{
-
-            //    if (cardList.Contains<Card>(c))
-            //    {
-            //        c.GiveCard();
-
-            //    }
-            //    else
-            //    {
-            //        break;
-            //    }
-            //}
-
-            //while (cardList.Count != 31)
-            //{
-            //    Card c = card.GiveCard(r.Next(0, 8), r.Next(0, 3));
-            //}
             
-            //попытка реализовать колоду. думаю не очень удачная нужно передумать алгоритм
-           //foreach(Card c in cardList)
-           // {
-           //     c.GiveCard();
-           //     if (cardList.Contains(c))
-           //     {
-           //         c.GiveCard();
-           //     }
-           // }
             return cardList;
         }
 
-
-
-        public Card GiveCardFromDeck()
+        /// <summary>
+        /// Метод перемешивает созданную колоду. Подсмотрен у Эндрю Стилмена
+        /// </summary>
+        public void Shuffle()
         {
-            card = new Card();
-            card.GiveCard();
-
-            while (!cardList.Contains(card))
+            List<Card> NewCards = new List<Card>();
+            while (cardList.Count > 0)
             {
-                
-
-                if (cardList.Contains(card))
-                {
-                    break;
-                }
-                else
-                {
-                    //Card newCard = card;
-                    cardList.Add(card);
-                    return card;
-                }
+                int CardToMove = random.Next(cardList.Count);
+                NewCards.Add(cardList[CardToMove]);
+                cardList.RemoveAt(CardToMove);
             }
-            return card;
-            
-            
+            cardList = NewCards;
         }
+        /// <summary>
+        /// возвращает булево значение тру если колода полна
+        /// </summary>
+        /// <returns></returns>
         public bool CardDeckFull()
         {
             if (cardList.Count == 32)
@@ -93,6 +57,6 @@ namespace The21Game
             }
             return true;
         }
-        //public List<Card> cardDeck = new List<Card>();
+      
     }
 }
