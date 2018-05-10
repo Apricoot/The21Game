@@ -38,7 +38,7 @@ namespace The21Game
 
 
             //}
-            myCardDeck.ReturnCardDeck();
+            myCardDeck.CreateCardDeck();
 
             foreach (Card c in myCardDeck.cardList)
             {

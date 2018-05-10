@@ -43,7 +43,9 @@ namespace The21Game
         public CardType cardType;
         public CardSuit cardSuit;
 
-        public int CardPoints { get; set; }
+        //public int CardPoints { get; set; }
+
+        
 
         Random random = new Random();
 
@@ -60,6 +62,11 @@ namespace The21Game
             cardSuit = cs;
         }
 
+        public int ReturnPointsOfCard(CardType cardType)
+        {
+            int i;
+            return i = (int)cardType;
+        }
 
         public Card GiveCard()
         {
