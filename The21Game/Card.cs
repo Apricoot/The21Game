@@ -42,7 +42,7 @@ namespace The21Game
     {
         public CardType cardType;
         public CardSuit cardSuit;
-
+        public int cardPoint;
         //public int CardPoints { get; set; }
 
         
@@ -60,6 +60,55 @@ namespace The21Game
         {
             cardType = ct;
             cardSuit = cs;
+            int point = 0;
+
+            switch ((int)ct)
+            {
+                case 0:
+                    //cardType = CardType.six;
+                    point = 6;
+                    break;
+                case 1:
+                    //cardType = CardType.seven;
+                    point = 7;
+                    break;
+                case 2:
+                    //cardType = CardType.eight;
+                    point = 8;
+                    break;
+                case 3:
+                    //cardType = CardType.nine;
+                    point = 9;
+                    break;
+                case 4:
+                    //cardType = CardType.ten;
+                    point = 10;
+                    break;
+                case 5:
+                    //cardType = CardType.Jack;
+                    point = 2;
+                    break;
+                case 6:
+                    //cardType = CardType.Lady;
+                    point = 3;
+                    break;
+                case 7:
+                    //cardType = CardType.King;
+                    point = 4;
+                    break;
+                case 8:
+                    //cardType = CardType.Ace;
+                    point = 11;
+                    break;
+            }
+            cardPoint = point;
+        }
+
+        public Card(CardType ct, CardSuit cs, int cp)
+        {
+            cardType = ct;
+            cardSuit = cs;
+            cardPoint = cp;
         }
 
         public int ReturnPointsOfCard(CardType cardType)
@@ -68,97 +117,112 @@ namespace The21Game
             return i = (int)cardType;
         }
 
-        public Card GiveCard()
-        {
-            Random random = new Random();
-            int randomCardType = random.Next(0, 8);
-           int randomCardSuit = random.Next(0, 3);
+        //public Card GiveCard()
+        //{
+        //    Random random = new Random();
+        //    int randomCardType = random.Next(0, 8);
+        //   int randomCardSuit = random.Next(0, 3);
 
-            switch (randomCardType)
-            {
-                case 0:
-                    cardType = CardType.six;
-                    break;
-                case 1:
-                    cardType = CardType.seven;
-                    break;
-                case 2:
-                    cardType = CardType.eight;
-                    break;
-                case 3:
-                    cardType = CardType.nine;
-                    break;
-                case 4:
-                    cardType = CardType.ten;
-                    break;
-                case 5:
-                    cardType = CardType.Jack;
-                    break;
-                case 6:
-                    cardType = CardType.Lady;
-                    break;
-                case 7:
-                    cardType = CardType.King;
-                    break;
-                case 8:
-                    cardType = CardType.Ace;
-                    break;
-            }
+        //    switch (randomCardType)
+        //    {
+        //        case 0:
+        //            cardType = CardType.six;
+        //            cardPoint = 6;
+        //            break;
+        //        case 1:
+        //            cardType = CardType.seven;
+        //            cardPoint = 7;
+        //            break;
+        //        case 2:
+        //            cardType = CardType.eight;
+        //            cardPoint = 8;
+        //            break;
+        //        case 3:
+        //            cardType = CardType.nine;
+        //            cardPoint = 9;
+        //            break;
+        //        case 4:
+        //            cardType = CardType.ten;
+        //            cardPoint = 10;
+        //            break;
+        //        case 5:
+        //            cardType = CardType.Jack;
+        //            cardPoint = 2;
+        //            break;
+        //        case 6:
+        //            cardType = CardType.Lady;
+        //            break;
+        //        case 7:
+        //            cardType = CardType.King;
+        //            break;
+        //        case 8:
+        //            cardType = CardType.Ace;
+        //            break;
+        //    }
 
 
-            switch (randomCardSuit)
-            {
-                case 0:
-                    cardSuit = CardSuit.Diamonds;
-                    break;
-                case 1:
-                    cardSuit = CardSuit.Clubs;
-                    break;
-                case 2:
-                    cardSuit = CardSuit.Hearts;
-                    break;
-                case 3:
-                    cardSuit = CardSuit.Spades;
-                    break;
-            }
+        //    switch (randomCardSuit)
+        //    {
+        //        case 0:
+        //            cardSuit = CardSuit.Diamonds;
+        //            break;
+        //        case 1:
+        //            cardSuit = CardSuit.Clubs;
+        //            break;
+        //        case 2:
+        //            cardSuit = CardSuit.Hearts;
+        //            break;
+        //        case 3:
+        //            cardSuit = CardSuit.Spades;
+        //            break;
+        //    }
 
-            Card newCard = new Card(cardType, cardSuit);
+        //    Card newCard = new Card(cardType, cardSuit);
 
-            return newCard;
-        }
+        //    return newCard;
+        //}
 
         public Card GiveCard(int crtType, int crtSuit)
         {
-           
+            int point = 0;
 
             switch (crtType)
             {
                 case 0:
                     cardType = CardType.six;
+                    point = 6;
                     break;
                 case 1:
                     cardType = CardType.seven;
+                    point = 7;
                     break;
                 case 2:
                     cardType = CardType.eight;
+                    point = 8;
                     break;
                 case 3:
                     cardType = CardType.nine;
+                    point = 9;
                     break;
                 case 4:
                     cardType = CardType.ten;
+                    point = 10;
                     break;
                 case 5:
                     cardType = CardType.Jack;
+                    point = 2;
                     break;
                 case 6:
                     cardType = CardType.Lady;
+                    point = 3;
                     break;
                 case 7:
                     cardType = CardType.King;
+                    point = 4;
                     break;
                 case 8:
                     cardType = CardType.Ace;
+                    point = 11;
                     break;
             }
 
@@ -179,14 +243,14 @@ namespace The21Game
                     break;
             }
 
-            Card newCard = new Card(cardType, cardSuit);
+            Card newCard = new Card(cardType, cardSuit, point );
 
             return newCard;
         }
 
         public override string ToString()
         {
-            return cardType.ToString() + " " + cardSuit.ToString();
+            return cardType.ToString() + " " + cardSuit.ToString() + " " + cardPoint;
         }
     }
 }

@@ -46,6 +46,30 @@ namespace The21Game
             cardList = NewCards;
         }
         /// <summary>
+        /// достает рандомную карту из колоды
+        /// </summary>
+        /// <returns></returns>
+        public Card GiveCardRandom()
+        {
+            int cardNumber = random.Next(cardList.Count);
+            Card cardToMove = cardList[cardNumber];
+            cardList.RemoveAt(cardNumber);
+
+            return cardToMove;
+
+        }
+        public Card GiveCardLast()
+        {
+            int cardNumber = (cardList.Count - 1);
+            Card cardToMove = cardList[cardNumber];
+            cardList.RemoveAt(cardNumber);
+
+            return cardToMove;
+
+        }
+        
+
+        /// <summary>
         /// возвращает булево значение тру если колода полна
         /// </summary>
         /// <returns></returns>
