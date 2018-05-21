@@ -58,6 +58,10 @@ namespace The21Game
             return cardToMove;
 
         }
+        /// <summary>
+        /// достает последнюю карту из колоды
+        /// </summary>
+        /// <returns></returns>
         public Card GiveCardLast()
         {
             int cardNumber = (cardList.Count - 1);

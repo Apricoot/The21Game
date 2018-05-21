@@ -6,44 +6,50 @@ using System.Threading.Tasks;
 
 namespace The21Game
 {
+    /// <summary>
+    /// хранит инфу о игроках и картах что у них в руках
+    /// </summary>
     class Player
     {
         List<Card> cardInHand = new List<Card>();
         public int PlayerCount { get; set; }
 
-        bool YouWin = false;
-
+        /// <summary>
+        /// добавляет карту в руку игроку
+        /// </summary>
+        /// <param name="card"></param>
         public void GetCard(Card card)
         {
             cardInHand.Add(card);
             PlayerCount += card.cardPoint;
 
-            if (cardInHand[cardInHand.Count] == card)
-            {
-                Console.WriteLine("Win!");
-                
-            }
+            
         }
-
+        /// <summary>
+        /// проверяет условие если 21 то победа
+        /// </summary>
+        /// <returns></returns>
         public bool Equail()
         {
             if (cardInHand[0].cardType == CardType.Ace & cardInHand[1].cardType == CardType.Ace)
             {
                 PlayerCount = 21;
-                YouWin = true;
                 return true;
                
             }
             return false;
         }
-
+        /// <summary>
+        /// выводит инфу о картах и очках игрока
+        /// </summary>
         public void Print()
         {
             foreach(Card c in cardInHand)
             {
                 Console.WriteLine(c.ToString());
             }
-            Console.WriteLine("Your points: {0}",PlayerCount);
+            Console.WriteLine("\n \r _____ points: {0}",PlayerCount);
+            Console.WriteLine();
         }
     }
 }
